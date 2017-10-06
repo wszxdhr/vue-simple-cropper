@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import VueSimpleCropper from '../src'
+import VueSimpleCropper from './src/index.vue'
 import Previewer from './Previewer.vue'
 
 export default {

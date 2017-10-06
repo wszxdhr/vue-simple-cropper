@@ -5,9 +5,8 @@ export default {
   top: 100,
   parent: null,
   ratioLocked: false,
-  // TODO: 放大origin
   changeLeft (val) {
-    let left = val > 0 ? val : 0
+    let _left = val > 0 ? val : 0
     if (this.ratioLocked && this.parent) {
       let rect = this.parent.getBoundingClientRect()
       let thisWidth = rect.width - this.left - this.right
@@ -15,11 +14,11 @@ export default {
       if (bottom < 0) {
         bottom = 0
         let thisHeight = rect.height - this.top
-        left = rect.width - thisHeight - this.right
+        _left = rect.width - thisHeight - this.right
       }
       this.bottom = bottom
     }
-    this.left = left
+    this.left = _left
   },
   changeRight (val) {
     this.right = val
